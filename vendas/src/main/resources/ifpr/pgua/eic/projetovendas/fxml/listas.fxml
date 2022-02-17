@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<FlowPane fx:id="rootPane" prefHeight="1285.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.projetovendas.telas.Listas">
+   <children>
+      <VBox>
+         <Label text="Pessoas" />
+         <ListView fx:id="lstPessoas" onMouseClicked="#atualizarRemoverPessoa" />
+      </VBox>
+
+      <VBox>
+         <Label text="Produtos" />
+         <ListView fx:id="lstProdutos" onMouseClicked="#atualizarRemoverProduto" />
+         <Label fx:id="lbListaVaziaProdutos" text="Lista Vazia!!" visible="false" />
+      </VBox>
+
+      <VBox prefHeight="424.0" prefWidth="361.0">
+         <Label text="Vendas" />
+         <TableView fx:id="tbListaVendas" onMouseClicked="#mostrarItensVenda" prefHeight="386.0" prefWidth="355.0">
+            <columns>
+               <TableColumn fx:id="tbcIdVenda" prefWidth="34.0" text="Id" />
+               <TableColumn fx:id="tbcDataVenda" prefWidth="92.0" text="Data da Venda" />
+               <TableColumn fx:id="tbcNomeCliente" prefWidth="174.0" text="Nome do cliente" />
+               <TableColumn fx:id="tbcTotalVenda" prefWidth="60.0" text="Total(R$)" />
+            </columns>
+         </TableView>
+         <Label fx:id="lbTotalVendas" text="Total Vendas R$ 0.0" /> 
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="152.0">
+         <children>
+            <Label text="Itens da venda" />
+            <TableView fx:id="tbItensVenda" prefHeight="386.0" prefWidth="152.0">
+               <columns>
+                  <TableColumn fx:id="tbcNomeItem" prefWidth="75.0" text="Itens" />
+                  <TableColumn fx:id="tbcQuantidadeItem" prefWidth="75.0" text="Quantidade" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>
